@@ -9,9 +9,11 @@ def 작업():
     while True:
         if 실행:
             try:
-                if 마우스위치=="특정위치":
+                if 마우스위치.get()=="특정위치":
                     x=int(x값.get()); y=int(y값.get())
-                    pyautogui.moveTo(x,y)
+                else:
+                    x, y = pyautogui.position()
+                pyautogui.moveTo(x,y)
 
                 동작=클릭종류.get()
                 if 동작=="좌클릭": pyautogui.click(button="left")
@@ -46,15 +48,17 @@ y값=tk.StringVar(value="100")
 입력문자=tk.StringVar()
 클릭종류=tk.StringVar(value="좌클릭")
 
-#마우스 고정위치, 간겨ㄱ, 단축기설정, 입력문자설정
+#마우스위치
+ttk.Label(창,text="마우스위치").pack()
+ttk.Combobox(창,textvariable=마우스위치,
+values=["현재위치","특정위치"]).pack(fill="x",padx=2)
+
+#마우스 고정위치, 간격, 단축기설정, 입력문자설정
 for t,v in [("X좌표",x값),("Y좌표",y값),("간격(초)",간격),("입력 문자/단축키",입력문자)]:
     ttk.Label(창,text=t).pack()
-    ttk.Entry(창,textvariable=v).pack(fill="x",padx=2)
+    ttk.Entry(창,textvariable=v).pack(fill="x",padx=5)
 
-#마우스위치
-ttk.Label(창,text="위치").pack()
-ttk.Combobox(창,textvariable=마우스위치,
-values=["현재위치","특정위치"]).pack(fill="x",padx=5)
+
 
 #자동으로 할 동작
 ttk.Label(창,text="동작").pack()
