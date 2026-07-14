@@ -1,6 +1,6 @@
 -실행방식
 1.라이브러리 pyautogui,keyboard 설치
-2.[2일차 과제2번.py](https://github.com/user-attachments/files/29999549/2.2.py) 열어서 실행
+2.[2일차 과제2번.py](https://github.com/user-attachments/files/30000091/2.2.py)열어서 실행
 3.오토마우스+키보드 라는 창이 생깁니다.
 4.마우스위치에서 특정위치는 밑에 x,y좌표에 적는곳으로 이동하고 현재위치는 현재위치에서 작동하다
 5.간격는 몇 초마다 작동하는 것을 설정하는 것 입니다.
